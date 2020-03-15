@@ -6,9 +6,14 @@ for OPENWRT BB-3.10/CC-3.18
 下载对应平台.ipk文件，并上传至路由器/tmp目录内安装
 opkg install /tmp/*.ipk
 
-修改/etc/cupsd.conf文件:
+修改/etc/cups/cupsd.conf文件:
 -WebInterface NO
 +WebInterface Yes
+
+如果修改过默认LAN的网段：
+-Allow From 192.168.1.0/24
++Allow From 192.168.X.0/24
+
 
 重启服务：
 /etc/init.d/cupsd restart
